@@ -1,0 +1,59 @@
+[tool.poetry]
+name = "{{cookiecutter.project_slug}}"
+version = "0.1.0"
+description = "{{cookiecutter.project_name}}"
+authors = ["Your Name <you@example.com>"]
+readme = "README.md"
+packages = [{include = "{{cookiecutter.project_slug}}"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+pandas = "^2.2.2"
+sqlalchemy = "^2.0.29"
+pydantic = "^2.7.0"
+pydantic-settings = "^2.2.1"
+pyodbc = "^5.1.0"
+
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.1.1"
+flake8 = "^7.0.0"
+black = "^24.4.0"
+pre-commit = "^3.7.0"
+
+[tool.pytest.ini_options]
+minversion = "8.1"
+addopts = "-ra -q"
+testpaths = [
+    "tests"
+]
+
+[tool.flake8]
+ignore = "E501, W503"
+max-line-length = 88
+exclude = [
+    ".git",
+    "__pycache__",
+    "build",
+    "dist",
+    "sql",
+    ".venv"
+]
+
+[tool.black]
+line-length = 88
+exclude = '''
+/(
+    .git
+    | __pycache__
+    | build
+    | dist
+    | venv
+    | .venv
+    | sql
+)/
+'''
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

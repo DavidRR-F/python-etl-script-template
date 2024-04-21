@@ -4,7 +4,7 @@ version = "0.1.0"
 description = "{{cookiecutter.project_name}}"
 authors = ["Your Name <you@example.com>"]
 readme = "README.md"
-packages = [{include = "script"}, {include = "notebooks"}]
+packages = [{include = "script"}, {include = "utils"}]
 
 [tool.poetry.dependencies]
 python = "^3.10"
@@ -22,10 +22,11 @@ black = "^24.4.0"
 pre-commit = "^3.7.0"
 ipykernel = "^6.29.4"
 nbformat = "^5.10.4"
+toml = "^0.10.2"
 
 [tool.poetry.scripts]
-create-kernel = "notebooks.scripts.create_kernel:main"
-create-book = "notebooks.scripts.create_book:main"
+create-kernel = "utils.notebook_commands:create_kernel"
+create-book = "utils.notebook_commands:create_book"
 
 [tool.pytest.ini_options]
 minversion = "8.1"

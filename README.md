@@ -1,6 +1,6 @@
-# {{ cookiecutter.project_name }}
+# All in One Python ETL Template
 
-{{ cookiecutter.description }}
+This repository provides a streamlined structure for ETL projects. Leveraging Poetry package manager, it efficiently manages your script directory, integrates Jupyter notebook management, and offers custom commands for kernel creation and new notebook setup. The included query manager class organizes SQL queries into designated files within the SQL directory, making them easily accessible in Python code to streamline your ETL workflow. 
 
 ## Example Usage
 

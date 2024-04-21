@@ -2,6 +2,12 @@
 
 This repository provides a streamlined structure for ETL projects. Leveraging Poetry package manager, it efficiently manages your script directory, integrates Jupyter notebook management, and offers custom commands for kernel creation and new notebook setup. The included query manager class organizes SQL queries into designated files within the SQL directory, making them easily accessible in Python code to streamline your ETL workflow. 
 
+Thanks to [GCBallesteros](https://github.com/GCBallesteros) you can use this template in conjuction with neovim plugins [NotebookNavigator](https://github.com/GCBallesteros/NotebookNavigator.nvim) and [Jupytext](https://github.com/GCBallesteros/jupytext.nvim) to create a all in one python data management workspace
+
+![image](https://github.com/DavidRR-F/python-etl-script-template/assets/99210748/b32f61ff-9b99-4ff8-a21d-23e6b3acbe6d)
+
+My [Notebook Neovim Configuration](https://github.com/DavidRR-F/dotfiles/tree/main/.config/nvim/lua/david/plugins/notebookconfig)
+
 ## Example Usage
 
 Define `core/config` variables with .env
@@ -63,3 +69,6 @@ df = dm.select_dataframe(qm.stats)
 df 
 # %%
 ```
+
+### ToDo
+- [ ] Airflow Dag Template/Generator

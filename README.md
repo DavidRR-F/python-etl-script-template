@@ -5,6 +5,7 @@ This repository provides a streamlined structure for ETL projects. Leveraging Po
 Thanks to [GCBallesteros](https://github.com/GCBallesteros) you can use this template in conjuction with neovim plugins [NotebookNavigator](https://github.com/GCBallesteros/NotebookNavigator.nvim) and [Jupytext](https://github.com/GCBallesteros/jupytext.nvim) to create a all in one python data management workspace
 
 ![image](https://github.com/DavidRR-F/python-etl-script-template/assets/99210748/b32f61ff-9b99-4ff8-a21d-23e6b3acbe6d)
+![image](https://github.com/DavidRR-F/python-etl-script-template/assets/99210748/76089428-f22b-4ff7-963c-b9d26c11c1d7)
 
 My [Notebook Neovim Configuration](https://github.com/DavidRR-F/dotfiles/tree/main/.config/nvim/lua/david/plugins/notebookconfig)
 

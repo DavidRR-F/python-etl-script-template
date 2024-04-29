@@ -10,21 +10,22 @@ class DatabaseManager:
         self.engine = create_engine(database_url)
         self.session = sessionmaker(bind=self.engine)
 
-    def execute_query(self, sql, **params):
+    def execute(self, sql, **params):
         with self.session() as session:
             with session.begin():
                 result = session.execute(text(sql), params)
             return result
 
-    def insert(self, sql, **params):
-        self.execute_query(sql, **params)
-
-    def select_all(self, sql, **params):
+    def select_all(self, sql, cls=None, **params):
         result = self.execute_query(sql, **params)
+        if cls:
+            return [cls(row) for row in result.fetchall()]
         return result.fetchall()
 
-    def select_first(self, sql, **params):
+    def select_first(self, sql, clas=None, **params):
         result = self.execute_query(sql, **params)
+        if cls:
+            return cls(result.fetchone())
         return result.fetchone()
 
     def select_dataframe(self, sql, **params) -> pd.DataFrame:

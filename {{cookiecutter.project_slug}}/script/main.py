@@ -1,4 +1,4 @@
-from core import qm
+from managers import qm
 
 
 def main():

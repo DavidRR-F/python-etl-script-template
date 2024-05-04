@@ -6,7 +6,7 @@ Thanks to [GCBallesteros](https://github.com/GCBallesteros) you can use this tem
 
 ![image](https://github.com/DavidRR-F/python-etl-script-template/assets/99210748/b32f61ff-9b99-4ff8-a21d-23e6b3acbe6d)
 
-My [Notebook Neovim Configuration](https://github.com/DavidRR-F/dotfiles/tree/main/.config/nvim/lua/david/plugins/notebookconfig)
+My [Notebook Neovim Configuration](https://github.com/DavidRR-F/dotfiles/tree/main/.config/nvim/lua/david/plugins/python)
 
 ## Example Usage
 

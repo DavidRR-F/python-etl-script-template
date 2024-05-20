@@ -16,15 +16,35 @@ def ensure_directory_exists(file_path):
         os.makedirs(directory)
 
 def create_kernel() -> None:
-
     pyproject_data = get_project_info()
+    env = os.environ.copy()
 
     if len(sys.argv) < 2:
-        kernel_name = pyproject_data.get('tool', {}).get('poetry', {}).get('name', 'new_kernel')
+        kernel_name = (
+            pyproject_data.get("tool", {}).get("poetry", {}).get("name", "new_kernel")
+        )
     else:
         kernel_name = sys.argv[1]
 
-    sub.run(["python", "-m", "ipykernel", "install", "--user", f"--name={kernel_name}"], check=True)
+    sub.run(
+        ["python", "-m", "ipykernel", "install", "--user", f"--name={kernel_name}"],
+        check=True,
+        env=env,
+    )
+    kernel_dir = os.path.join(
+        os.environ["HOME"], ".local", "share", "jupyter", "kernels", kernel_name
+    )
+    kernel_json = {
+        "argv": [sys.executable, "-m", "ipykernel_launcher", "-f", "{connection_file}"],
+        "display_name": f"Python ({kernel_name})",
+        "language": "python",
+        "env": env,
+    }
+    os.makedirs(kernel_dir, exist_ok=True)
+    with open(os.path.join(kernel_dir, "kernel.json"), "w") as f:
+        import json
+
+        json.dump(kernel_json, f, indent=2)
     print(f"Kernel Created: '{kernel_name}'")
 
 def create_book() -> None:

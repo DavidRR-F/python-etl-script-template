@@ -1,4 +1,4 @@
-from managers import qm
+from script.managers import qm
 
 
 def main():
